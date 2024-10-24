@@ -1,0 +1,21 @@
+/* badge.css */
+.RegionFilter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.RegionFilter .badge {
+    background-color: white !important; /* Default background color */
+    border: 2px solid rgb(50, 50, 50); /* Dark grey outline */
+    color: rgb(50, 50, 50); /* Text color */
+    padding: 12px;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.RegionFilter .badge.selected {
+    background-color: rgb(50, 50, 50) !important; /* Background color when selected */
+    color: white; /* Text color when selected */
+}

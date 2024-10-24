@@ -1,0 +1,16 @@
+.custom-navbar {
+    background-color: rgb(6, 64, 43); /* Set the background color */
+    width: 100%; /* Ensure it stretches across the whole screen */
+}
+
+/* Optional: Change the text color of the brand */
+.custom-navbar .navbar-brand {
+    padding-left: 20px;
+    color: white; /* Set brand text color to white */
+}
+
+/* Optional: Change the text color on hover */
+.custom-navbar .navbar-brand:hover {
+    text-decoration: underline;
+    position: relative;
+}
