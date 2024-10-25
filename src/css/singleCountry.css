@@ -1,0 +1,14 @@
+/* singleCountry.css */
+
+/* Ensure the flag image fills the column fully */
+.country-flag {
+    width: 100%;  /* Make the image span 100% of the column width */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Optional: Center the text in the left column */
+.text-center {
+    text-align: center;
+}
+
+/* Add any additional styles as needed */

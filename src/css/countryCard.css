@@ -1,0 +1,22 @@
+/* Fixed height for the entire card */
+.country-card {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Right and bottom shadow */
+}
+
+/* Fixed height for the image with object-fit for consistent sizing */
+.card-img {
+    height: 200px;
+    width:100% ;
+    object-fit: cover;
+}
+
+/* Allow body content to grow and adjust for flex */
+.card-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: auto; /* Pushes content to the bottom */
+}

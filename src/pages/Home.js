@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Row } from 'react-bootstrap';
+import { Row, Alert } from 'react-bootstrap'; // Import Alert from react-bootstrap
 import CountryCard from '../components/CountryCard';
 import AccordionFilter from '../components/AccordionFilter';
 
 const Home = () => {
     const [countriesList, setCountriesList] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
     const [allCountries, setAllCountries] = useState([]);
+    const [displayedCount, setDisplayedCount] = useState(0); // State to keep track of displayed country count
 
     useEffect(() => {
         axios.get('https://restcountries.com/v3.1/all')
             .then(response => {
                 setCountriesList(response.data);
                 setAllCountries(response.data);
+                setDisplayedCount(response.data.length); // Initialize displayed count
             })
             .catch(error => {
                 console.error(error);
@@ -25,6 +26,7 @@ const Home = () => {
         axios.get(`https://restcountries.com/v3.1/region/${region}`)
             .then(response => {
                 setCountriesList(response.data);
+                setDisplayedCount(response.data.length); // Update displayed count
             })
             .catch(error => {
                 console.error(error);
@@ -37,18 +39,8 @@ const Home = () => {
             country.name.common.startsWith(letter)
         );
         setCountriesList(filtered);
+        setDisplayedCount(filtered.length); // Update displayed count
     };
-
-    const handleSearch = (e) => {
-        const term = e.target.value.toLowerCase();
-        setSearchTerm(term);
-        // Filter countries based on search term
-        const filteredCountries = allCountries.filter(country =>
-            country.name.common.toLowerCase().includes(term)
-        );
-        setCountriesList(filteredCountries);
-    };
-
 
     return (
         <div>
@@ -56,10 +48,12 @@ const Home = () => {
                 fetchCountriesByRegion={fetchCountriesByRegion} 
                 fetchCountriesByLetter={fetchCountriesByLetter}
             />
-            <input 
-                placeholder='Search' 
-                onChange={(e) => setSearchTerm(e.target.value)} 
-            />
+            {/* Displaying results message */}
+            {displayedCount > 0 && (
+                <Alert variant="info" className="mb-3">
+                    Displaying results for {displayedCount} countries
+                </Alert>
+            )}
             <Row md={3} xs={1}>
                 {countriesList.map(country => (
                     <CountryCard 

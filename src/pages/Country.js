@@ -4,12 +4,6 @@ import axios from "axios";
 import { Image, Row, Col } from "react-bootstrap";
 
 const Country = () => {
-  // useParams returns an object of key/value pairs of URL parameters
-  // Meaning this has to match up with the parameter in the Route in App.js
-  // We've used a route of /country/:name
-  // So, we can access the value of :name using useParams().name
-  // Or, by *destructuring* the object, we can access it directly
-  // Like we've done here:
   const { name } = useParams();
 
   // Store the country data in a state
