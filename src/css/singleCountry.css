@@ -11,4 +11,28 @@
     text-align: center;
 }
 
+.flag-desc {
+    color: grey;
+}
+
+.location-card {
+    background-color: rgb(6, 64, 43);
+}
+
+.location-card .text-col {
+    color: rgb(235, 235, 235);
+}
+
+/* General link styling */
+.location-card a {
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline by default */
+}
+
+/* Link hover effect */
+.location-card a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
 /* Add any additional styles as needed */
