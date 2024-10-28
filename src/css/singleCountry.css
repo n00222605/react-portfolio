@@ -11,4 +11,16 @@
     text-align: center;
 }
 
+.flag-desc {
+    color: grey;
+}
+
+.location-card {
+    background-color: rgb(6, 64, 43);
+}
+
+.location-card .text-col {
+    color: rgb(235, 235, 235);
+}
+
 /* Add any additional styles as needed */
