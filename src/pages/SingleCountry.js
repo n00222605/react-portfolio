@@ -110,6 +110,7 @@ const SingleCountry = () => {
                                                 <Link to={`/nationalDish/${dish.strMeal}`}>
                                                     {dish.strMeal}
                                                 </Link>
+
                                             </li>
                                         ))}
                                     </ul>
